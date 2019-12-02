@@ -1,20 +1,14 @@
-FROM python:lasted
 
-# Install Python Setuptools
-RUN apt-get install -y python-setuptools
+FROM python:3.8.0
 
 # Install pip
 RUN easy_install pip
 
 # Add and install Python modules
-ADD requirements.txt /src/requirements.txt
-RUN cd /src; pip install -r requirements.txt
-
-# Bundle app source
-ADD . /src
+RUN pip install -r requirements.txt
 
 # Expose
 EXPOSE  8080
 
 # Run
-CMD ["python", "/src/main.py"]
+CMD ["python", "main.py"]
