@@ -1,3 +1,5 @@
+FROM python:lasted
+
 # Install Python Setuptools
 RUN apt-get install -y python-setuptools
 
